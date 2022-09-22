@@ -4,9 +4,9 @@ import java.util.Scanner;
 public class RPS {
     public static void main(String[] args) {
 
-        while(true) {
-
             System.out.println("hey, enter 'r' 'p' or 's' to play rock paper scissors\nor type 'quit' to leave: ");
+
+            while(true) {
 
             Scanner scanner = new Scanner(System.in);
             String myMove = scanner.nextLine();
@@ -33,11 +33,12 @@ public class RPS {
 
             if (myMove.equals(opponentMove)) {
                 System.out.println("It's a tie");
+                break;
             }
             else if (myMove.equals("r") && opponentMove.equals("s") ||
                     myMove.equals("s") && opponentMove.equals("p") ||
                     myMove.equals("p") && opponentMove.equals("r")) {
-                System.out.println("you win! the answer was: " + opponentMove);
+                System.out.println("you win! the answer was: " + myMove);
                 break;
             }
             else if (!myMove.equals("r") && opponentMove.equals("s") ||
@@ -46,8 +47,6 @@ public class RPS {
                 System.out.println("you lose! the answer was: " + opponentMove);
                 break;
             }
-
         }
     }
-
 }
